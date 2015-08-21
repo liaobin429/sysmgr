@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-controller="IndexController">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content=="IE=edge"/>
+<meta name="google" value="notranslate"/>
+<title>{{title}}</title>
+<link rel="stylesheet" href="/stylesheets/index.css">
+<link rel="stylesheet" href="/stylesheets/style.css">
+<link rel="stylesheet" href="/javascripts/libs/bootstrap/css/bootstrap.min.2.0.4.css">
+<link rel="stylesheet" href="/javascripts/libs/bootstrap/css/bootstrap-responsive.min.css">
+
+<script src="/javascripts/libs/jquery-1.9.1.min.js"></script>
+<script src="/javascripts/libs/bootstrap/js/bootstrap.min.js"></script>
+<!--  -->
+<!-- <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> -->
+</head>
+<body>
+  <div class="app">
+  <div class="head-machine">
+      <div id="legend" class="">
+        <legend class="">机器<%=one.m_address%></legend>
+      </div>
+  
+</div>
+<div class="main"  ng-controller="formController">
+  <form class="form-horizontal" name="userForm"  ng-submit="submitForm(userForm.$valid)" novalidate>
+    <input type="hidden" placeholder="_id"  ng-model="formData._id" class="input-xlarge" ng-init="formData._id='<%=one._id%>'" >
+    <fieldset style="float:left">
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01" >主机名</label>
+          <div class="controls">
+            <input type="text" placeholder="hostname" ng-model="formData.hostname" class="input-xlarge" ng-init="formData.hostname='<%=one.hostname%>'" value="" required>
+            <p class="help-block"></p>
+          </div>
+    </div>
+
+    <div class="control-group">
+          <!-- Text input-->
+          <label class="control-label" for="input01">机器位置</label>
+          <div class="controls">
+            <input type="text" placeholder="m_address"  ng-model="formData.m_address" class="input-xlarge" ng-init="formData.m_address='<%=one.m_address%>'" value="">
+            <p class="help-block"></p>
+          </div>
+        </div>
+
+    <div class="control-group">
+
+          <!-- Select Basic -->
+          <label class="control-label">业务区域</label>
+          <div class="controls">
+            <select class="input-xlarge"  ng-model="formData.area">
+                <option>业务一区</option>
+                <option>业务二区</option>
+                <option>业务三区</option></select>
+          </div>
+
+        </div><div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">机器标签</label>
+          <div class="controls">
+            <input type="text" placeholder="m_label"  ng-model="formData.m_label" class="input-xlarge" ng-init="formData.m_label='<%=one.m_label%>'" value="">
+            <p class="help-block"></p>
+          </div>
+        </div>
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">机器类型</label>
+          <div class="controls">
+            <input type="text" placeholder="m_type"  ng-model="formData.m_type" class="input-xlarge" ng-init="formData.m_type='<%=one.m_type%>'" value="">
+            <p class="help-block"></p>
+          </div>
+        </div>
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">机器序列号</label>
+          <div class="controls">
+            <input type="text" placeholder="m_type_num" ng-model="formData.m_type_num" class="input-xlarge" ng-init="formData.m_type_num='<%=one.m_type_num%>'" value="">
+            <p class="help-block"></p>
+          </div>
+        </div>
+  
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">操作系统</label>
+          <div class="controls">
+            <input type="text" placeholder="os" ng-model="formData.os"  class="input-xlarge" ng-init="formData.os='<%=one.os%>'" value="">
+            <p class="help-block"></p>
+          </div>
+        </div>
+
+
+    <div class="control-group">
+
+          <!-- Textarea -->
+          <label class="control-label">机器配置</label>
+          <div class="controls">
+            <div class="textarea"  >
+                  <textarea type="" class="" ng-model="formData.m_config"  ng-init="formData.m_config='<%=one.m_config%>'" style=" height: 50px;  width: 260px;" > </textarea>
+            </div>
+          </div>
+        </div>
+
+  
+    <div class="control-group">
+
+          <!-- Textarea -->
+          <label class="control-label">IP</label>
+          <div class="controls">
+            <div class="textarea" >
+                  <textarea type="" class="" ng-model="formData.ip" ng-init="formData.ip='<%=one.ip%>'"  style=" height: 50px;  width: 260px;"> </textarea>
+            </div>
+          </div>
+        </div>
+
+    <div class="control-group">
+
+          <!-- Textarea -->
+          <label class="control-label">应用名称</label>
+          <div class="controls">
+            <div class="textarea"  >
+                  <textarea type="" class="" ng-model="formData.app_name" ng-init="formData.app_name='<%=one.app_name%>'"  style=" height: 50px;  width: 260px;"> </textarea>
+            </div>
+          </div>
+        </div>
+
+    </fieldset>
+
+    <fieldset>
+     <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">公司</label>
+          <div class="controls">
+            <input type="text" placeholder="m_provide" ng-model="formData.m_provide"  class="input-xlarge" ng-init="formData.m_provide='<%=one.m_provide%>'" value="">
+            <p class="help-block"></p>
+          </div>
+        </div><div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">购买日期</label>
+          <div class="controls">
+            <input type="text" placeholder="buy_date" ng-model="formData.buy_date"  class="input-xlarge" ng-init="formData.buy_date='<%=one.buy_date%>'" value="">
+            <p class="help-block"></p>
+          </div>
+        </div>
+
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">原厂服务日期</label>
+          <div class="controls">
+            <input type="text" placeholder="orig_serv_date" ng-model="formData.orig_serv_date"  class="input-xlarge" ng-init="formData.orig_serv_date='<%=one.orig_serv_date%>'" value="">
+            <p class="help-block"></p>
+          </div>
+        </div>
+
+    
+
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">第三方服务日期</label>
+          <div class="controls">
+            <input type="text" placeholder="third_serv_date" ng-model="formData.third_serv_date"  class="input-xlarge" ng-init="formData.third_serv_date='<%=one.third_serv_date%>'" value="">
+            <p class="help-block"></p>
+          </div>
+        </div>
+
+    
+
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">内存</label>
+          <div class="controls">
+            <input type="number" placeholder="memory" ng-model="formData.memory"  class="input-xlarge" ng-init="formData.memory=<%=one.memory%>" value="" required>
+            <p class="help-block"></p>
+          </div>
+        </div>
+
+
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">cpu</label>
+          <div class="controls">
+            <input type="number" placeholder="cpu" ng-model="formData.cpu"  class="input-xlarge" ng-init="formData.cpu=<%=one.cpu%>" value="" required>
+            <p class="help-block"></p>
+          </div>
+        </div>
+    
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">网线标签</label>
+          <div class="controls">
+            <input type="text" placeholder="net_label" ng-model="formData.net_label"  class="input-xlarge" ng-init="formData.net_label='<%=one.net_label%>'" value="">
+            <p class="help-block"></p>
+          </div>
+        </div><div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">光签标签</label>
+          <div class="controls">
+            <input type="text" placeholder="fiber_label" ng-model="formData.fiber_label"  class="input-xlarge" ng-init="formData.fiber_label='<%=one.fiber_label%>'" value="">
+            <p class="help-block"></p>
+          </div>
+        </div>
+
+  <div class="control-group">
+
+          <!-- Textarea -->
+          <label class="control-label">描述</label>
+          <div class="controls">
+            <div class="textarea" >
+                  <textarea type="" class="" ng-model="formData.desc" ng-init="formData.desc='<%=one.desc%>'"  style=" height: 50px;  width: 260px;" > </textarea>
+            </div>
+          </div>
+        </div>
+
+    
+    <div class="control-group">
+          <label class="control-label"></label>
+
+          <!-- Button -->
+          <div class="controls">
+            <button class="btn btn-success" type="submit" ng-disabled="userForm.$invalid">确定</button>
+          </div>
+        </div>
+
+    </fieldset>
+
+  </form>
+
+ </div>
+
+</div>
+<script data-main="/javascripts/app/manager/machineIndex.js" src="/javascripts/libs/require.js"></script>
+<%- include ../end.html %>

@@ -1,0 +1,95 @@
+<!--  -->
+<%- include ../begin.html %>
+<div class="app">
+	<div class="head">
+		<div class="head-search" id="head-search">   
+	    <form class="search" action="/search/machine" method="get">
+	      <input class="sinput" type="text" name="s" id="s" placeholder="机器位置  /  os类型  /  公司" /> 
+	      <input class="sbtn" type="submit" value="搜索" />
+	    </form>
+	  </div>
+	  <div class="head-login">
+	  	  	<%if(locals.user){%>
+		  	<span class="userbox" ><%=locals.user.name%> &nbsp;&nbsp;<a href='/logout'>退出</a></span>
+		  	<%}else{%>
+		  	<input class="sbtn" type="submit" value="登录" onclick="self.location='/login'" />
+		  	<%}%>
+	  </div>
+	</div>
+	<input type="hidden" placeholder="currPage"  ng-model="currPage" class="input-xlarge" ng-init="currPage=<%=currPage%>" >
+	<input type="hidden" placeholder="pageNum"  ng-model="pageNum" class="input-xlarge" ng-init="pageNum=<%=pageNum%>" >
+	<div class="main">
+		
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+					<table class="table table-hover table-bordered">
+						<thead>
+							<tr>
+								<th>
+									序号
+								</th>
+								<th>
+									系统名称
+								</th>
+								<th>
+									机器位置
+								</th>
+								<th>
+									机器类型
+								</th>
+								<th>
+									机器序列号
+								</th>
+								<th>
+									公司
+								</th>
+								<th>
+									操作
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<%for(var i=0;i<ones.length;i++){%>
+							<tr <%if(i%2==0){%>class="success"<%}%>>
+								<td>
+									<%=(currPage-1)*pageNum+i+1%>
+								</td>
+								<td>
+									<%=ones[i].app_name%>
+								</td>
+								<td>
+									<%=ones[i].m_address%>
+								</td>
+								<td>
+									<%=ones[i].m_type%>
+								</td>
+								<td>
+									<%=ones[i].m_type_num%>
+								</td>
+								<td>
+									<%=ones[i].m_provide%>
+								</td>
+								<td>
+									<a target="_blank" href="#">详细</a>&nbsp;
+									<a target="_blank" href="/manager/machine/<%=ones[i]._id%>">编辑</a>
+									&nbsp;<a href="#">删除</a>
+								</td>
+							</tr>
+							<%}%>
+							
+						</tbody>
+					</table>
+				</div>
+				<div class="text-center" ng-controller="pageController">
+    				<ul class="pagination">
+				    </ul>
+				</div>	
+			</div>
+		</div>
+
+	</div>
+	<%- include ../foot.html %>
+</div>
+<script data-main="/javascripts/app/manager/machineIndex.js" src="/javascripts/libs/require.js"></script>
+<%- include ../end.html %>

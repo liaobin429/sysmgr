@@ -1,0 +1,125 @@
+<!--  -->
+<%- include ../begin.html %>
+<div class="app">
+	<%- include ../head.html %>
+	<div class="main">
+		<!-- <div id="njblogbg"  >
+	    <img id="bg" ng-src="{{resources.bg}}">
+	    <a href="javascript:;" class="prv-fullscreen" ng-click="preimg()">Pre</a>
+	    <a href="javascript:;" class="nxt-fullscreen" ng-click="nextimg()">Next</a>
+		</div>
+		<div class="wrap_top_nav">
+		    <nav id="top_nav">
+		        <ul class="inline-style clearfix">
+		            <li class="active"><a href="#/">{{txt.home}}</a></li>
+		            <li class="active"><a href="#/{{login.url}}">{{login.name}}</a></li>
+		            <li class="active"><a href="#/{{signup.url}}">{{signup.name}}</a></li>
+		            <li class="active">
+		                <a href="javascript:;" class="preview" ng-click="fullscreen()">幻灯片放映</a>
+		            </li>
+		        </ul>
+		    </nav>
+		</div> -->
+		
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+					<table class="table table-hover table-bordered">
+						<thead>
+							<tr>
+								<th>
+									编号
+								</th>
+								<th>
+									产品
+								</th>
+								<th>
+									交付时间
+								</th>
+								<th>
+									状态
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									1
+								</td>
+								<td>
+									TB - Monthly
+								</td>
+								<td>
+									01/04/2012
+								</td>
+								<td>
+									Default
+								</td>
+							</tr>
+							<tr class="success">
+								<td>
+									1
+								</td>
+								<td>
+									TB - Monthly
+								</td>
+								<td>
+									01/04/2012
+								</td>
+								<td>
+									Approved
+								</td>
+							</tr>
+							<tr class="error">
+								<td>
+									2
+								</td>
+								<td>
+									TB - Monthly
+								</td>
+								<td>
+									02/04/2012
+								</td>
+								<td>
+									Declined
+								</td>
+							</tr>
+							<tr class="warning">
+								<td>
+									3
+								</td>
+								<td>
+									TB - Monthly
+								</td>
+								<td>
+									03/04/2012
+								</td>
+								<td>
+									Pending
+								</td>
+							</tr>
+							<tr class="info">
+								<td>
+									4
+								</td>
+								<td>
+									TB - Monthly
+								</td>
+								<td>
+									04/04/2012
+								</td>
+								<td>
+									Call in to confirm
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<%- include ../foot.html %>
+</div>
+<script data-main="/javascripts/app/index/index.js" src="/javascripts/libs/require.js"></script>
+<%- include ../end.html %>

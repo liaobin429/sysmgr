@@ -1,0 +1,15 @@
+<div class="head">
+	<div class="head-search" id="head-search">   
+    <form class="search" action="/search" method="get">
+      <input class="sinput" type="text" name="s" id="s" placeholder="姓名 / 关键字 / IP" /> 
+      <input class="sbtn" type="submit" value="搜索" onclick="for"/>
+    </form>
+  </div>
+  <div class="head-login">
+  	<%if(locals.user){%>
+  	<span class="userbox" ><%=locals.user.name%> &nbsp;&nbsp;<a ef='/logout'>退出</a></span>
+  	<%}else{%>
+  	<input class="sbtn" type="submit" value="登录" onclick="self.location='/login'" />
+  	<%}%>
+  </div>
+</div>

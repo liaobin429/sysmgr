@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-controller="IndexController">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content=="IE=edge"/>
+<meta name="google" value="notranslate"/>
+<title>{{title}}</title>
+<link rel="stylesheet" href="/stylesheets/index.css">
+<link rel="stylesheet" href="/stylesheets/style.css">
+<link rel="stylesheet" href="/javascripts/libs/bootstrap/css/bootstrap.min.css">
+<script src="/javascripts/libs/jquery-1.9.1.min.js"></script>
+<script src="/javascripts/libs/bootstrap/js/bootstrap.min.js"></script>
+<script src="/javascripts/libs/bootstrap/js/bootstrap-paginator.min.js"></script>
+<!--  -->
+<!-- <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> -->
+</head>
+<body>
+  <div id="left-menu">
+      <nav class="main-menu">
+      <div class="logo"></div>
+      <ul>
+          <li>
+            <a href="/" target="_self" title="首页">
+              <div class="icon-index icon-home"></div>
+            </a>
+          </li>
+
+          <li class="has-subnav">
+              <a href="/manager/machine?page=1" id="test">
+                  <div class="icon-index icon-machine"></div>
+              </a>
+          </li>
+
+           <li>
+              <a href="/manager/system">
+                 <div class="icon-index icon-system"></div>
+              </a>
+          </li>
+          <li class="has-subnav">
+              <a href="/manager/user">
+                 <div class="icon-index icon-user"></div>
+              </a>
+          </li>
+      </ul>
+
+      <ul class="logout">
+          <li>
+             <a href="#">
+                   <i class="icon icon-lightbulb-o"></i>
+                  <span class="nav-text">
+                      Logout
+                  </span>
+
+              </a>
+          </li>  
+      </ul>
+      </nav>
+    </div>

@@ -1,0 +1,26 @@
+<!--  -->
+<%- include ../begin.html %>
+<div class="app">
+  <%- include ../head.html %>
+  <div class="main">
+   <div class="container">
+      <form class="form-signin" action="/loginsubmit" method="post">
+        <h2 class="form-signin-heading">登录</h2>
+        <label for="inputname" class="sr-only">用户名</label>
+        <input type="inputname" name="loginname" class="form-control" placeholder="用户名" required="" autofocus="">
+        <label for="inputPassword" class="sr-only">密码</label>
+        <input type="password" name="passwd" class="form-control" placeholder="密码" required="">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> 请记住我
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登 录</button>
+      </form>
+
+    </div>
+  </div>
+  <%- include ../foot.html %>
+</div>
+<script data-main="/javascripts/app/index/index.js" src="/javascripts/libs/require.js"></script>
+<%- include ../end.html %>
