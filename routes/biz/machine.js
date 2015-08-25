@@ -1,6 +1,7 @@
 var Machine = require('../../models/machine');
 var data = require('../../data/machine_aix');
 var EventProxy = require('eventproxy');
+var Util = require('../util/util');
 exports.getMachine = function(req,res){
 	// res.render('index',{title:'aaa'});
 	var query = {};
@@ -24,6 +25,39 @@ exports.getMachine = function(req,res){
 			
 		}
 	});
+};
+
+exports.searchmgr = function(req,res){
+	console.log('aa');
+	var con = req.query.search; 
+	console.log(con);
+	var query = {};
+	var sort = [['m_address', 'asc']];
+	var page = req.query.page==undefined?global.page:req.query.page;
+    var pageNum = req.query.pageNum==undefined?global.pageNum:req.query.pageNum;
+	var skip = (page-1)*pageNum;
+	var pageLimit = pageNum;
+
+	if(!Util.isNull(con)){
+		if(isOsType(con))
+			query = {os:con};
+	}
+	console.log(query);
+	Machine.find(query,sort,skip,pageLimit,function(err,ones){
+		if(err)
+			res.render('404');
+		else{
+
+			Machine.count(query,function(err,totalPage){
+				// var totalPage = ones.length/pageNum + ones%pageNum==0?0:1;
+				console.log(totalPage);
+				res.render('manager/machine',{'ones':ones,'currPage':page,'pageNum':pageNum});
+				//res.send(ones);
+			});
+			
+		}
+	});
+
 };
 
 exports.edit = function(req,res){
@@ -72,7 +106,12 @@ var saveOne = function(one,callback){
 
 
 
-
+function isOsType(str){
+	if('aix' == str.toLowerCase() || 'linux' == str.toLowerCase() || 'win' == str.toLowerCase)
+		return true;
+	else
+		return false;
+}
 
 
 

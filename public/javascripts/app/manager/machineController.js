@@ -3,9 +3,9 @@
 define(['jquery','../app','i18n!app/resources/nls/res','all_tools'], function ($,app,res) {
 
     return app.controller('pageController', function ($scope, $http) {
-       console.log('pageController');
+       // console.log('pageController');
 
-       console.log($scope.currPage);
+       // console.log($scope.currPage);
        var options = {
                 size:"small",
                 bootstrapMajorVersion:3,

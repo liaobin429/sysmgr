@@ -17,7 +17,8 @@ module.exports = function(app) {
 	app.get('/manager/system/:_id',auth.userRequired,routes.system.edit);
 	app.get('/manager/machine/:_id',auth.userRequired,routes.machine.edit);
 	app.post('/manager/machineSubmit',auth.userRequired,routes.machine.editSubmit);
-
+	app.get('/manager/msearch?',auth.userRequired,routes.machine.searchmgr);
+	
 	//search  system,machine
 
 	app.get('/system?',routes.system.show);
